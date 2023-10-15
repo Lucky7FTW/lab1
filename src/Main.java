@@ -1,5 +1,6 @@
 public class Main {
     public static void main(String[] args) {
+        //ub1
         NotenTest.nichtAusreichendenNotenTest();
         NotenTest.durchschnittsNoteTest();
         NotenTest.abgerundeteNoten();
@@ -7,5 +8,7 @@ public class Main {
         NotenTest.roudTest();
 
         System.out.println("NotenTest ist gut!");
+        //ub2
+        ZahlenTest.ZahlenAlleTeste();
     }
 }
