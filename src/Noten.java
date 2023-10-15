@@ -32,10 +32,19 @@ public class Noten {
 
     public int maximaleAbgerundeteNote(int[] noten){
         int max=-1;
+        if (noten.length<0) {
+            return -1;
+        }
+        for (int i = 0; i < noten.length; i++) {
+            if (noten[i] < 0 || noten[i] > 100) {
+                System.out.println("Eine oder mehrere Noten sind nich zwichen 0 und 100");
+                return -1;
+            }
+        }
         int[] gerundet= abgerundeteNoten(noten);
-        for(int i =0; i<gerundet.length;i++){
-            if(noten[i]>max){
-                max=noten[i];
+        for(int j =0; j<gerundet.length;j++){
+            if(noten[j]>max){
+                max=noten[j];
             }
         }
         return max;
