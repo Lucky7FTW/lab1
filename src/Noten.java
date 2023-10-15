@@ -29,22 +29,6 @@ public class Noten {
         }
         return finaleNoten;
     }
-    public int durchnittsNote(int[] noten) {
-        int summe = 0;
-        for (int i = 0; i < noten.length; i++) {
-            if (noten[i] < 0 || noten[i] > 100) {
-                System.out.println("Eine oder mehrere Noten sind nich zwichen 0 und 100");
-                return -1;
-            } else {
-                summe = summe + round(noten[i]);
-            }
-        }
-        if (noten.length <= 0)
-            return 0;
-        else {
-            return summe / noten.length;
-        }
-    }
 
     public int maximaleAbgerundeteNote(int[] noten){
         int max=-1;
@@ -77,6 +61,24 @@ public class Noten {
         }
         result[original.length]= newElement;
         return result;
+    }
+
+    public int durchschnittsNote(int[] noten) {
+        int summe = 0;
+        for (int i = 0; i < noten.length; i++) {
+            if (noten[i] < 0 || noten[i] > 100) {
+                System.out.println("Eine oder mehrere Noten sind nich zwichen 0 und 100");
+                return -1;
+            } else {
+                summe = summe + round(noten[i]);
+            }
+        }
+        if (noten.length <= 0)
+            return 0;
+        else {
+            return summe / noten.length;
+        }
+
     }
 }
 
