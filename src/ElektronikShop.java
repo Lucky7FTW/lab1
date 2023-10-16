@@ -48,14 +48,21 @@ public class ElektronikShop {
         }
         return max;
     }
-    public int geldBetrag(int b, int[] tastaturen, int[] usb){
-        int billigsteTastatur = billigsteTastatur(tastaturen);
-        int teuerstesUsb = teuerstesLeisten(usb, b);
+    public int geldBetrag(int b, int[] tastaturen, int[] usb) {
+        int teuerstesTastatur = teuerstesLeisten(tastaturen, b);
 
-        if (billigsteTastatur == -1 || teuerstesUsb == -1 || billigsteTastatur + teuerstesUsb > b) {
+        if (teuerstesTastatur == -1) {
             return -1;
         }
 
-        return billigsteTastatur + teuerstesUsb;
+        int remainingBudget = b - teuerstesTastatur; // Calculate remaining budget after buying the most expensive affordable keyboard
+
+        int teuerstesUsb = teuerstesLeisten(usb, remainingBudget);
+
+        if (teuerstesUsb == -1) {
+            return -1;
+        }
+
+        return teuerstesTastatur + teuerstesUsb;
     }
 }
