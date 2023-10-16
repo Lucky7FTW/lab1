@@ -9,15 +9,17 @@ public class Main {
         NotenTest.maximaleAbgerundeteNoteTest();
         NotenTest.roudTest();
 
-        System.out.println("NotenTest ist gut!");
+        System.out.println("NotenTest erfolgreich abgeschlossen.");
         //ub2
         ZahlenTest.ZahlenAlleTeste();
         //ub3
-        int[] zahl = {2, 3, 6, 0, 0, 0, 0, 0, 0};
-        int ziffer = 2;
+        SummeArrayTest.testAddiereZweiZahlen();
+        SummeArrayTest.testSubtrahiereZweiZahlen();
+        SummeArrayTest.testMultipliziereMitEinerZiffer();
+        SummeArrayTest.testDividiereMitEinerZiffer();
 
-        int[] produkt = SummeArray.multipliziereMitEinerZiffer(zahl, ziffer);
-        System.out.println(Arrays.toString(produkt));
+        System.out.println("SummeArrayTest erfolgreich abgeschlossen.");
+        //ub4
 
         
     }
