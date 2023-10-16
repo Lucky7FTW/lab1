@@ -34,7 +34,7 @@ public class SummeArray {
         int n = zahl1.length;
         int[] differenz = new int[n];
         int pas = 0;
-
+        //nimmt den array von ende bis es
         for (int i = n - 1; i >= 0; i--) {
             int diff = zahl1[i] - zahl2[i] - pas;
 
@@ -56,6 +56,7 @@ public class SummeArray {
         return differenz;
     }
     public static int[] multipliziereMitEinerZiffer(int[] zahl, int ziffer) {
+        //nimmt alle zahlen aus den array und multipiziert sie
         if (zahl.length == 0) {
             System.out.println("Die Zahl darf nicht leer sein.");
             return null;
@@ -68,7 +69,7 @@ public class SummeArray {
         int n = zahl.length;
         int[] produkt = new int[n + 1];
         int pas = 0;
-
+        //berechent von ende zu vorne damit es den pas kennen wird zb wenn die zahl uber 9 ist
         for (int i = n - 1; i >= 0; i--) {
             int temp = zahl[i] * ziffer + pas;
             pas = temp / 10;
@@ -101,7 +102,7 @@ public class SummeArray {
         int n = zahl.length;
         int[] quotient = new int[n];
         int rest = 0;
-
+        //wir fangen von vorne an damit wir den Rest kennen
         for (int i = 0; i < n; i++) {
             int temp = zahl[i] + rest * 10;
             quotient[i] = temp / ziffer;
