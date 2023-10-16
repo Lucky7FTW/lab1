@@ -1,3 +1,5 @@
+import java.util.Arrays;
+
 public class ElektronikShop {
     public int billigsteTastatur(int[] tastaturen){
         if (tastaturen.length<1){
@@ -53,20 +55,28 @@ public class ElektronikShop {
         return max;
     }
     public int geldBetrag(int b, int[] tastaturen, int[] usb) {
-        int biligstesusb = billigsteTastatur(usb);
-
-        if (biligstesusb == -1) {
+        if (usb.length < 1){
+            System.out.println("Es gibt keine Elemente in der liste :( ");
             return -1;
         }
-
-        int remainingBudget = b - biligstesusb;
-
-        int teuerstesTastatur = teuerstesLeisten(tastaturen, remainingBudget);
-
-        if (teuerstesTastatur == -1) {
+        if (tastaturen.length < 1){
+            System.out.println("Es gibt keine Elemente in der liste :( ");
             return -1;
         }
+        Arrays.sort(tastaturen);
+        Arrays.sort(usb);
 
-        return teuerstesTastatur + biligstesusb;
+        int costen=-1;
+        for(int i=0;i<tastaturen.length;i++){
+            int tastaturPreis = tastaturen[i];
+            for (int j=0;j<usb.length;j++){
+                int usbPreis=usb[j];
+                int costen_prov=tastaturPreis+usbPreis;
+                if(costen_prov <= b && costen_prov > costen){
+                    costen=costen_prov;
+                }
+            }
+        }
+        return costen;
     }
 }
