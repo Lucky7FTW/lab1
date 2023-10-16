@@ -62,7 +62,7 @@ public class SummeArray {
             return null;
         }
 
-        if (ziffer < 0) {
+        if (ziffer < 1) {
             System.out.println("Die Ziffer darf nicht negativ sein.");
             return null;
         }

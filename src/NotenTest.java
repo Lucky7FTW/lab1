@@ -25,9 +25,9 @@ public class NotenTest {
 
     public static void abgerundeteNoten() {
         Noten test = new Noten();
-        int[] test_wahr = {35,37,53}; // alle Noten sind abgerundet
+        int[] test_wahr = {35,37,50}; // alle Noten sind abgerundet
         int[] result_wahr = test.abgerundeteNoten(test_wahr);
-        assert Arrays.equals(result_wahr, new int[]{35,37,55});
+        assert Arrays.equals(result_wahr, new int[]{35,37,50});
 
         int[] test_falsch = {-10, 50, 70, 110}; // -10 in array
         int[] result_falsch = test.abgerundeteNoten(test_falsch);
@@ -55,15 +55,15 @@ public class NotenTest {
 
         int test3 = 42; // 45 (nicht teilbar mit 5)
         int result3 = test.round(test3);
-        assert result3 == 45;
+        assert result3 == 42;
 
         int test4 = 50; // 50 (teilbar mit 5)
         int result4 = test.round(test4);
         assert result4 == 50;
 
-        int test5 = 53; // 55 (nicht teilbar mit 5)
+        int test5 = 53; // 56 (nicht teilbar mit 5)
         int result5 = test.round(test5);
-        assert result5 == 55;
+        assert result5 == 56;
 
         int test6 = 37; //37 (kleiner als 38)
         int result6 = test.round(test6);

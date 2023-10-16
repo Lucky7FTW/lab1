@@ -4,7 +4,7 @@ public class ElektronikShop {
             System.out.println("Es gibt keine Tastaturen :( ");
             return -1;
         }
-        int min=-1;
+        int min=tastaturen[0];
         for (int i=0;i<tastaturen.length;i++){
             if (min>tastaturen[i]){
                 min=tastaturen[i];
@@ -33,8 +33,9 @@ public class ElektronikShop {
     public int teuerstes(int[] sachen){
         int max=0;
         for (int i=0;i<sachen.length;i++){
-            if (max<sachen[i]);
-            max = sachen[i];
+            if (max<sachen[i]) {
+                max = sachen[i];
+            }
         }
         return max;
     }
@@ -52,20 +53,20 @@ public class ElektronikShop {
         return max;
     }
     public int geldBetrag(int b, int[] tastaturen, int[] usb) {
-        int teuerstesTastatur = teuerstesLeisten(tastaturen, b);
+        int biligstesusb = billigsteTastatur(usb);
+
+        if (biligstesusb == -1) {
+            return -1;
+        }
+
+        int remainingBudget = b - biligstesusb;
+
+        int teuerstesTastatur = teuerstesLeisten(tastaturen, remainingBudget);
 
         if (teuerstesTastatur == -1) {
             return -1;
         }
 
-        int remainingBudget = b - teuerstesTastatur;
-
-        int teuerstesUsb = teuerstesLeisten(usb, remainingBudget);
-
-        if (teuerstesUsb == -1) {
-            return -1;
-        }
-
-        return teuerstesTastatur + teuerstesUsb;
+        return teuerstesTastatur + biligstesusb;
     }
 }

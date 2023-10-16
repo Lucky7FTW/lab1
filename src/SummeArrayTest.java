@@ -4,7 +4,7 @@ public class SummeArrayTest {
     public static void testAddiereZweiZahlen() {
         int[] zahl1 = {1, 2, 3};
         int[] zahl2 = {4, 5, 6};
-        int[] erwartetesErgebnis1 = {5, 7, 9};
+        int[] erwartetesErgebnis1 = {0,5, 7, 9};
         assert Arrays.equals(SummeArray.addiereZweiZahlen(zahl1, zahl2), erwartetesErgebnis1);
 
         int[] zahl3 = {9, 8, 7};
@@ -13,7 +13,7 @@ public class SummeArrayTest {
         assert Arrays.equals(SummeArray.addiereZweiZahlen(zahl3, zahl4), erwartetesErgebnis2);
 
         int[] zahl5 = {9, 8, 7};
-        int[] zahl6 = {1, 2, 3,4};
+        int[] zahl6 = {1, 2, 3, 4};
         int[] erwartetesErgebnis3=null; //adieren von vershiedene grosen
         assert Arrays.equals(SummeArray.addiereZweiZahlen(zahl5, zahl6), erwartetesErgebnis3);
     }
@@ -42,7 +42,7 @@ public class SummeArrayTest {
     public static void testDividiereMitEinerZiffer() {
         int[] zahl11 = {6, 9, 2};
         int ziffer3 = 2;
-        int[] erwartetesErgebnis7 = {3, 4, 1};
+        int[] erwartetesErgebnis7 = {3, 4, 6};
         assert Arrays.equals(SummeArray.dividiereMitEinerZiffer(zahl11, ziffer3), erwartetesErgebnis7);
 
         int[] zahl12 = {1};

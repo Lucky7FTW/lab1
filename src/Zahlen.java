@@ -16,10 +16,11 @@ public class Zahlen {
         //speichert eine min bis es eine kleinere zahl findt(es nimmt aber zahl[0] als die erste min)
         if (zahlen.length<1){
             System.out.println("Es gibt keine Zahlen in den Array");
+            return -1;
         }
         int min=zahlen[0];
-        for(int i=1;i<zahlen.length;i++){
-            if(min<zahlen[i]){
+        for(int i=0;i<zahlen.length;i++){
+            if(min>zahlen[i]){
                 min=zahlen[i];
             }
         }
@@ -29,6 +30,7 @@ public class Zahlen {
         //nimmt jede zahl und addiert sie in eine summe
         if (zahlen.length<1){
             System.out.println("Es gibt keine Zahlen in den Array");
+            return -1;
         }
         int summe=0;
         for(int i=0;i<zahlen.length;i++){
