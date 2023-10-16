@@ -38,9 +38,9 @@ public class ElektronikShop {
     public int teuerstesLeisten(int[] usb, int budget){
         if (usb.length < 1){
             System.out.println("Es gibt keine Elemente in der liste :( ");
-            return -1; // Return a default value to indicate an error
+            return -1;
         }
-        int max = -1; // Initialize max with a value that indicates an error
+        int max = -1;
         for (int i = 0; i < usb.length; i++){
             if (usb[i] <= budget && usb[i] > max){
                 max = usb[i];
@@ -55,7 +55,7 @@ public class ElektronikShop {
             return -1;
         }
 
-        int remainingBudget = b - teuerstesTastatur; // Calculate remaining budget after buying the most expensive affordable keyboard
+        int remainingBudget = b - teuerstesTastatur;
 
         int teuerstesUsb = teuerstesLeisten(usb, remainingBudget);
 
