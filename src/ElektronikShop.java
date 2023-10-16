@@ -37,7 +37,7 @@ public class ElektronikShop {
     }
     public int teuerstesLeisten(int[] usb, int budget){
         if (usb.length < 1){
-            System.out.println("Es gibt keine USBs :( ");
+            System.out.println("Es gibt keine Elemente in der liste :( ");
             return -1; // Return a default value to indicate an error
         }
         int max = -1; // Initialize max with a value that indicates an error
