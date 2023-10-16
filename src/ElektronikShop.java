@@ -2,6 +2,7 @@ public class ElektronikShop {
     public int billigsteTastatur(int[] tastaturen){
         if (tastaturen.length<1){
             System.out.println("Es gibt keine Tastaturen :( ");
+            return -1;
         }
         int min=-1;
         for (int i=0;i<tastaturen.length;i++){
@@ -14,9 +15,11 @@ public class ElektronikShop {
     public int teuersteGegenstand(int[] tastaturen,int[] usb){
         if (tastaturen.length<1){
             System.out.println("Es gibt keine Tastaturen :( ");
+            return -1;
         }
         if (usb.length<1){
             System.out.println("Es gibt keine UBS :( ");
+            return -1;
         }
         int max_tastaturen=teuerstes(tastaturen);
         int max_usb=teuerstes(usb);

@@ -11,6 +11,11 @@ public class SummeArrayTest {
         int[] zahl4 = {1, 2, 3};
         int[] erwartetesErgebnis2 = {1, 1, 1, 0};
         assert Arrays.equals(SummeArray.addiereZweiZahlen(zahl3, zahl4), erwartetesErgebnis2);
+
+        int[] zahl5 = {9, 8, 7};
+        int[] zahl6 = {1, 2, 3,4};
+        int[] erwartetesErgebnis3=null; //adieren von vershiedene grosen
+        assert Arrays.equals(SummeArray.addiereZweiZahlen(zahl5, zahl6), erwartetesErgebnis3);
     }
     public static void testSubtrahiereZweiZahlen() {
         int[] zahl5 = {5, 6, 7};
@@ -31,7 +36,7 @@ public class SummeArrayTest {
 
         int[] zahl10 = {1, 2, 3};
         int ziffer2 = 0;
-        int[] erwartetesErgebnis6 = null; // Die Ziffer darf nicht negativ sein.
+        int[] erwartetesErgebnis6 = null; // Die Ziffer darf nicht negativ sein oder null;
         assert Arrays.equals(SummeArray.multipliziereMitEinerZiffer(zahl10, ziffer2), erwartetesErgebnis6);
     }
     public static void testDividiereMitEinerZiffer() {
