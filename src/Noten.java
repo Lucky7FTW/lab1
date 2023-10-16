@@ -1,5 +1,6 @@
 public class Noten {
     public int[] nichtAusreichendenNoten(int[] noten){
+        //berechnet die Noten die nicht ausreichen und addiert sie in einen Array
 
         for (int i=0; i<noten.length;i++){
             if (noten[i]<0 || noten[i]>100){
@@ -8,7 +9,7 @@ public class Noten {
             }
         }
         int[] finaleNoten = new int[0];
-
+        //nimmt jede zahl die kleiner ist als 40
         for(int i=0;i<noten.length;i++){
             if (round(noten[i])<40){
                 finaleNoten = addToArray(finaleNoten,noten[i]);
@@ -17,12 +18,14 @@ public class Noten {
         return finaleNoten;
     }
     public int[] abgerundeteNoten(int[] noten){
+        //nimmt alle abgerundete Noten und tut sie in ein Array
         for (int i=0; i<noten.length;i++){
             if (noten[i]<0 || noten[i]>100){
                 System.out.println("Eine oder mehrere Noten sind nich zwichen 0 und 100");
                 return null;
             }
         }
+        //nimmt die abgerundete Note und addiert sie im array
         int[] finaleNoten = new int[0];
         for(int i=0;i<noten.length;i++){
             finaleNoten = addToArray(finaleNoten,round(noten[i]));
@@ -31,6 +34,7 @@ public class Noten {
     }
 
     public int maximaleAbgerundeteNote(int[] noten){
+        //nimmt alle maximale abgerundete Noten und tut sie in ein Array
         int max=-1;
         if (noten.length<0) {
             return -1;
@@ -50,6 +54,7 @@ public class Noten {
         return max;
     }
 
+    //nimmt alle noten und rundet sie ab
     public int round(int note){
         if(note<38){
             return note;
@@ -63,6 +68,8 @@ public class Noten {
             }
         }
     }
+
+    //addiert ein Element zu den Array
     public static int[] addToArray(int[] original,int newElement){
         int[] result=new int[original.length+1];
         for (int i=0;i< original.length;i++){
@@ -73,6 +80,7 @@ public class Noten {
     }
 
     public int durchschnittsNote(int[] noten) {
+        //berechnet die Durschitsnote indem es die abgerundete noten zu eine summe addiert
         int summe = 0;
         for (int i = 0; i < noten.length; i++) {
             if (noten[i] < 0 || noten[i] > 100) {
